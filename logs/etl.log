@@ -1,0 +1,90 @@
+[2025-06-02 23:12:56] [INFO] [etl.config] Loaded environment variables from .env file.
+[2025-06-02 23:12:56] [INFO] [etl.pipeline] Starting ETL pipeline...
+[2025-06-02 23:12:56] [INFO] [etl.pipeline] Extracting data from Excel...
+[2025-06-02 23:12:56] [ERROR] [etl.extract.excel_reader] File not found: [WinError 3] El sistema no puede encontrar la ruta especificada: 'data'
+[2025-06-02 23:12:56] [ERROR] [etl.pipeline] ETL pipeline failed: [WinError 3] El sistema no puede encontrar la ruta especificada: 'data'
+[2025-06-02 23:15:52] [INFO] [etl.config] Loaded environment variables from .env file.
+[2025-06-02 23:15:52] [INFO] [etl.pipeline] Starting ETL pipeline...
+[2025-06-02 23:15:52] [INFO] [etl.pipeline] Extracting data from Excel...
+[2025-06-02 23:15:52] [ERROR] [etl.extract.excel_reader] File not found: [WinError 3] El sistema no puede encontrar la ruta especificada: 'data'
+[2025-06-02 23:15:52] [ERROR] [etl.pipeline] ETL pipeline failed: [WinError 3] El sistema no puede encontrar la ruta especificada: 'data'
+[2025-06-02 23:18:00] [INFO] [etl.config] Loaded environment variables from .env file.
+[2025-06-02 23:18:00] [INFO] [etl.pipeline] Starting ETL pipeline...
+[2025-06-02 23:18:00] [INFO] [etl.pipeline] Extracting data from Excel...
+[2025-06-02 23:18:00] [INFO] [etl.config] Excel file path resolved: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:18:00] [INFO] [etl.extract.excel_reader] Reading Excel file from C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:18:01] [INFO] [etl.extract.excel_reader] Successfully read Excel file: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:18:01] [INFO] [etl.pipeline] Loading data into staging table...
+[2025-06-02 23:18:01] [INFO] [etl.config] Database connection string constructed successfully.
+[2025-06-02 23:18:01] [ERROR] [etl.load.load_to_db] Failed to load data into staging table 'DatosCasoEstudio': ('IM002', '[IM002] [Microsoft][Administrador de controladores ODBC] No se encuentra el nombre del origen de datos y no se especificó ningún controlador predeterminado (0) (SQLDriverConnect)')
+[2025-06-02 23:18:01] [INFO] [etl.load.load_to_db] Database connection closed after loading.
+[2025-06-02 23:18:01] [ERROR] [etl.pipeline] ETL pipeline failed: ('IM002', '[IM002] [Microsoft][Administrador de controladores ODBC] No se encuentra el nombre del origen de datos y no se especificó ningún controlador predeterminado (0) (SQLDriverConnect)')
+[2025-06-02 23:20:13] [INFO] [etl.config] Loaded environment variables from .env file.
+[2025-06-02 23:20:14] [INFO] [etl.pipeline] Starting ETL pipeline...
+[2025-06-02 23:20:14] [INFO] [etl.pipeline] Extracting data from Excel...
+[2025-06-02 23:20:14] [INFO] [etl.config] Excel file path resolved: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:20:14] [INFO] [etl.extract.excel_reader] Reading Excel file from C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:20:14] [INFO] [etl.extract.excel_reader] Successfully read Excel file: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:20:14] [INFO] [etl.pipeline] Loading data into staging table...
+[2025-06-02 23:20:14] [INFO] [etl.config] Database connection string constructed successfully.
+[2025-06-02 23:20:14] [ERROR] [etl.load.load_to_db] Failed to load data into staging table 'DatosCasoEstudio': ('28000', '[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user \'etl_app_user\'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open database "staging" requested by the login. The login failed. (4060); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user \'etl_app_user\'. (18456); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open database "staging" requested by the login. The login failed. (4060)')
+[2025-06-02 23:20:14] [INFO] [etl.load.load_to_db] Database connection closed after loading.
+[2025-06-02 23:20:14] [ERROR] [etl.pipeline] ETL pipeline failed: ('28000', '[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user \'etl_app_user\'. (18456) (SQLDriverConnect); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open database "staging" requested by the login. The login failed. (4060); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user \'etl_app_user\'. (18456); [28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Cannot open database "staging" requested by the login. The login failed. (4060)')
+[2025-06-02 23:23:19] [INFO] [etl.config] Loaded environment variables from .env file.
+[2025-06-02 23:23:19] [INFO] [etl.pipeline] Starting ETL pipeline...
+[2025-06-02 23:23:19] [INFO] [etl.pipeline] Extracting data from Excel...
+[2025-06-02 23:23:19] [INFO] [etl.config] Excel file path resolved: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:23:19] [INFO] [etl.extract.excel_reader] Reading Excel file from C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:23:19] [INFO] [etl.extract.excel_reader] Successfully read Excel file: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:23:19] [INFO] [etl.pipeline] Loading data into staging table...
+[2025-06-02 23:23:19] [INFO] [etl.config] Database connection string constructed successfully.
+[2025-06-02 23:23:19] [INFO] [etl.load.load_to_db] Connected to the database. Starting load into 'DatosCasoEstudio'.
+[2025-06-02 23:23:19] [INFO] [etl.load.load_to_db] Prepared insert statement for 16 columns.
+[2025-06-02 23:23:19] [ERROR] [etl.load.load_to_db] Failed to load data into staging table 'DatosCasoEstudio': ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'DatosCasoEstudio'. (208) (SQLExecDirectW); [42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+[2025-06-02 23:23:19] [INFO] [etl.load.load_to_db] Database connection closed after loading.
+[2025-06-02 23:23:19] [ERROR] [etl.pipeline] ETL pipeline failed: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'DatosCasoEstudio'. (208) (SQLExecDirectW); [42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+[2025-06-02 23:27:17] [INFO] [etl.config] Loaded environment variables from .env file.
+[2025-06-02 23:27:17] [INFO] [etl.pipeline] Starting ETL pipeline...
+[2025-06-02 23:27:17] [INFO] [etl.pipeline] Extracting data from Excel...
+[2025-06-02 23:27:17] [INFO] [etl.config] Excel file path resolved: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:27:17] [INFO] [etl.extract.excel_reader] Reading Excel file from C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:27:18] [INFO] [etl.extract.excel_reader] Successfully read Excel file: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:27:18] [INFO] [etl.pipeline] Loading data into staging table...
+[2025-06-02 23:27:18] [INFO] [etl.config] Database connection string constructed successfully.
+[2025-06-02 23:27:18] [INFO] [etl.load.load_to_db] Connected to the database. Starting load into 'DatosCasoEstudio'.
+[2025-06-02 23:27:18] [INFO] [etl.load.load_to_db] Prepared insert statement for 16 columns.
+[2025-06-02 23:27:18] [ERROR] [etl.load.load_to_db] Failed to load data into staging table 'DatosCasoEstudio': ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'DatosCasoEstudio'. (208) (SQLExecDirectW); [42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+[2025-06-02 23:27:18] [INFO] [etl.load.load_to_db] Database connection closed after loading.
+[2025-06-02 23:27:18] [ERROR] [etl.pipeline] ETL pipeline failed: ('42S02', "[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'DatosCasoEstudio'. (208) (SQLExecDirectW); [42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+[2025-06-02 23:29:33] [INFO] [etl.config] Loaded environment variables from .env file.
+[2025-06-02 23:29:33] [INFO] [etl.pipeline] Starting ETL pipeline...
+[2025-06-02 23:29:33] [INFO] [etl.pipeline] Extracting data from Excel...
+[2025-06-02 23:29:33] [INFO] [etl.config] Excel file path resolved: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:29:33] [INFO] [etl.extract.excel_reader] Reading Excel file from C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:29:33] [INFO] [etl.extract.excel_reader] Successfully read Excel file: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:29:33] [INFO] [etl.pipeline] Loading data into staging table...
+[2025-06-02 23:29:33] [INFO] [etl.config] Database connection string constructed successfully.
+[2025-06-02 23:29:33] [INFO] [etl.load.load_to_db] Connected to the database. Starting load into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:29:33] [INFO] [etl.load.load_to_db] Prepared insert statement for 16 columns.
+[2025-06-02 23:29:34] [INFO] [etl.load.load_to_db] Inserted rows 1 to 500 into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:29:34] [INFO] [etl.load.load_to_db] Inserted rows 501 to 1000 into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:29:35] [INFO] [etl.load.load_to_db] Inserted rows 1001 to 1499 into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:29:35] [INFO] [etl.load.load_to_db] Finished loading 1499 rows into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:29:35] [INFO] [etl.load.load_to_db] Database connection closed after loading.
+[2025-06-02 23:29:35] [INFO] [etl.pipeline] ETL pipeline finished successfully.
+[2025-06-02 23:32:55] [INFO] [etl.config] Loaded environment variables from .env file.
+[2025-06-02 23:32:55] [INFO] [etl.pipeline] Starting ETL pipeline...
+[2025-06-02 23:32:55] [INFO] [etl.pipeline] Extracting data from Excel...
+[2025-06-02 23:32:55] [INFO] [etl.config] Excel file path resolved: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:32:55] [INFO] [etl.extract.excel_reader] Reading Excel file from C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:32:55] [INFO] [etl.extract.excel_reader] Successfully read Excel file: C:\Users\Stiva\Documents\Inacap\Arquitectura de datos\Proyecto Banco BI\etl\data\Data.xlsx
+[2025-06-02 23:32:55] [INFO] [etl.pipeline] Loading data into staging table...
+[2025-06-02 23:32:55] [INFO] [etl.config] Database connection string constructed successfully.
+[2025-06-02 23:32:55] [INFO] [etl.load.load_to_staging] Connected to the database. Starting load into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:32:55] [INFO] [etl.load.load_to_staging] Prepared insert statement for 16 columns.
+[2025-06-02 23:32:56] [INFO] [etl.load.load_to_staging] Inserted rows 1 to 500 into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:32:56] [INFO] [etl.load.load_to_staging] Inserted rows 501 to 1000 into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:32:56] [INFO] [etl.load.load_to_staging] Inserted rows 1001 to 1499 into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:32:56] [INFO] [etl.load.load_to_staging] Finished loading 1499 rows into 'staging.DatosCasoEstudio'.
+[2025-06-02 23:32:56] [INFO] [etl.load.load_to_staging] Database connection closed after loading.
+[2025-06-02 23:32:56] [INFO] [etl.pipeline] ETL pipeline finished successfully.
