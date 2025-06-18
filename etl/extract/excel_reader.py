@@ -2,10 +2,27 @@ import polars as pl
 from etl.config import get_excel_file_path, get_db_connection_string, ConfigError
 from etl.utils.logger import get_logger
 
-
 logger = get_logger(__name__)
+REQUIRED_COLUMNS = [
+    "FECHA DE NACIMIENTO",
+    "RUT",
+    "NIVEL EDUCACIONAL DECLARADO",
+    "SEXO",
+    "ESTADO CIVIL",
+    "ACTIVIDAD",
+    "INGRESO MENSUAL PROMEDIO",
+    "TOTAL DE CONTACTOS",
+    "PUNTUACIÓN PROMEDIO",
+    "REGIÓN",
+    "FECHA APERTURA CUENTA",
+    "USO DE TARJETA MENSUALMENTE",
+    "SALDO MAXIMO REGISTRADO",
+    "NUMERO DE CUENTA",
+    "TIPO CUENTA",
+    "VECES SALDO CERO",
+]
 
-def read_excel_data(sheet_name: str = None) -> pl.DataFrame:
+def read_excel_data() -> pl.DataFrame:
     """
     Reads data from the Excel file located in the data folder.
 
@@ -24,12 +41,30 @@ def read_excel_data(sheet_name: str = None) -> pl.DataFrame:
         file_path = get_excel_file_path()
         logger.info(f"Reading Excel file from {file_path}")
 
-        if sheet_name:
-            df = pl.read_excel(file_path, sheet_name=sheet_name)
-        else:
-            df = pl.read_excel(file_path) 
-
+        df = pl.read_excel(file_path) 
         logger.info(f"Successfully read Excel file: {file_path}")
+
+        missing_columns = [col for col in REQUIRED_COLUMNS if col not in df.columns]
+        if missing_columns:
+            error_msg = f"Missing required columns: {missing_columns}"
+            logger.error(error_msg)
+            raise ValueError(error_msg)
+        
+        for col in REQUIRED_COLUMNS:
+            if df[col].null_count() > 0:
+                # Filtrar filas donde el campo está nulo
+                invalid_rows = df.filter(df[col].is_null())
+
+                # Extraer los ruts de esas filas
+                ruts_with_null = invalid_rows.get_column("RUT").to_list()
+
+                error_msg = (
+                    f"Column '{col}' contains missing (null) values. "
+                    f"RUTs with missing data in this column: {ruts_with_null}"
+                )
+                logger.error(error_msg)
+                raise ValueError(error_msg)
+            
         return df
 
     except ConfigError as e:

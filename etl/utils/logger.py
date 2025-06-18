@@ -20,7 +20,7 @@ def get_logger(module_name: str) -> logging.Logger:
         os.makedirs(log_folder, exist_ok=True)
         file_handler = RotatingFileHandler(
             os.path.join(log_folder, "etl.log"),
-            maxBytes=1_000_000,   
+            maxBytes=1_000_000,
             backupCount=5        
         )
         file_handler.setFormatter(formatter)

@@ -30,6 +30,39 @@ def get_excel_file_path(data_folder: str = "data") -> str:
     logger.info(f"Excel file path resolved: {excel_path}")
     return excel_path
 
+def get_staging_connection_string() -> str:
+    """
+    Builds and returns the database connection string using environment variables.
+
+    Returns:
+        str: Database connection string.
+
+    Raises:
+        ConfigError: If any required environment variable is missing.
+    """
+    db_host = os.getenv("DB_HOST")
+    db_port = os.getenv("DB_PORT")
+    db_name = os.getenv("DB_STAGING")
+    db_user = os.getenv("DB_USER")
+    db_password = os.getenv("DB_PASSWORD")
+
+    if not all([db_host, db_port, db_name, db_user, db_password]):
+        logger.error("Missing required environment variables for database connection.")
+        raise ConfigError("Missing one or more required environment variables for the database connection.")
+
+    connection_string = (
+        f"DRIVER={{ODBC Driver 17 for SQL Server}};"
+        f"SERVER={db_host},{db_port};"
+        f"DATABASE={db_name};"
+        f"UID={db_user};"
+        f"PWD={db_password};"
+        "TrustServerCertificate=yes;"
+    )
+
+    logger.info("Database connection string constructed successfully.")
+    return connection_string
+
+
 def get_db_connection_string() -> str:
     """
     Builds and returns the database connection string using environment variables.
@@ -42,7 +75,7 @@ def get_db_connection_string() -> str:
     """
     db_host = os.getenv("DB_HOST")
     db_port = os.getenv("DB_PORT")
-    db_name = os.getenv("DB_NAME")
+    db_name = os.getenv("DB_TRANSACT")
     db_user = os.getenv("DB_USER")
     db_password = os.getenv("DB_PASSWORD")
 
