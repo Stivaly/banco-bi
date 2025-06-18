@@ -148,6 +148,10 @@ def transform_regions(df: pl.DataFrame) -> pl.DataFrame:
                 return_dtype=pl.Utf8
             ).alias("REGIÓN")
         ])
+    
+    if "REGIÓN" in out.columns and "Region" not in out.columns:
+        out = out.with_columns(pl.col("REGIÓN").alias("Region"))
+        
     log.debug(f"Regions DF after transform: {out.head()}")
     return out
 
