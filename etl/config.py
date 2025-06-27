@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from functools import lru_cache
 from etl.utils.logger import get_logger 
 
 logger = get_logger(__name__)
@@ -32,10 +33,10 @@ def get_excel_file_path(data_folder: str = "data") -> str:
 
 def get_staging_connection_string() -> str:
     """
-    Builds and returns the database connection string using environment variables.
+    Builds and returns the data staging connection string using environment variables.
 
     Returns:
-        str: Database connection string.
+        str: Data staging connection string.
 
     Raises:
         ConfigError: If any required environment variable is missing.
@@ -47,8 +48,8 @@ def get_staging_connection_string() -> str:
     db_password = os.getenv("DB_PASSWORD")
 
     if not all([db_host, db_port, db_name, db_user, db_password]):
-        logger.error("Missing required environment variables for database connection.")
-        raise ConfigError("Missing one or more required environment variables for the database connection.")
+        logger.error("Missing required environment variables for data staging connection.")
+        raise ConfigError("Missing one or more required environment variables for the data staging connection.")
 
     connection_string = (
         f"DRIVER={{ODBC Driver 17 for SQL Server}};"
@@ -59,10 +60,10 @@ def get_staging_connection_string() -> str:
         "TrustServerCertificate=yes;"
     )
 
-    logger.info("Database connection string constructed successfully.")
+    logger.info("Data staging connection string constructed successfully.")
     return connection_string
 
-
+@lru_cache
 def get_db_connection_string() -> str:
     """
     Builds and returns the database connection string using environment variables.
@@ -92,5 +93,38 @@ def get_db_connection_string() -> str:
         "TrustServerCertificate=yes;"
     )
 
-    logger.info("Database connection string constructed successfully.")
+    # logger.info("Database connection string constructed successfully.")
+    return connection_string
+
+@lru_cache
+def get_dwh_connection_string() -> str:
+    """
+    Builds and returns the datawarehouse connection string using environment variables.
+
+    Returns:
+        str: Datawarehouse connection string.
+
+    Raises:
+        ConfigError: If any required environment variable is missing.
+    """
+    dw_host = os.getenv("DW_HOST")
+    dw_port = os.getenv("DW_PORT")
+    dw_name = os.getenv("DW_NAME")
+    dw_user = os.getenv("DW_USER")
+    dw_password = os.getenv("DW_PASSWORD")
+
+    if not all([dw_host, dw_port, dw_name, dw_user, dw_password]):
+        logger.error("Missing required environment variables for datawarehouse connection.")
+        raise ConfigError("Missing one or more required environment variables for the datawarehouse connection.")
+
+    connection_string = (
+        f"DRIVER={{ODBC Driver 17 for SQL Server}};"
+        f"SERVER={dw_host},{dw_port};"
+        f"DATABASE={dw_name};"
+        f"UID={dw_user};"
+        f"PWD={dw_password};"
+        "TrustServerCertificate=yes;"
+    )
+
+    logger.info("Datawarehouse connection string constructed successfully.")
     return connection_string
