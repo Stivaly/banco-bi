@@ -1,6 +1,6 @@
 import pyodbc
 import polars as pl
-from etl.config import get_db_connection_string, ConfigError
+from etl.config import get_staging_connection_string
 from etl.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -28,7 +28,7 @@ def load_dataframe_to_staging(
     conn = None
     cursor = None
     try:
-        conn = pyodbc.connect(get_db_connection_string(), autocommit=True)
+        conn = pyodbc.connect(get_staging_connection_string(), autocommit=True)
         cursor = conn.cursor()
         logger.info(f"Connected to the database. Starting load into '{table_name}'.")
 
