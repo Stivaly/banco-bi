@@ -43,7 +43,7 @@ etl_project/
 
 ```bash
 git clone https://github.com/Stivaly/banco-bi.git
-cd etl_project
+cd etl
 ```
 
 2. Crea un entorno virtual:
