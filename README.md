@@ -12,26 +12,26 @@ etl_project/
 │ │  
 │ ├── extract/  
 │ │ └── excel_reader.py # Módulos para leer archivos fuente (XLSX, CSV, etc.)  
-│ │
+│ │  
 │ ├── transform/  
 │ │ ├── data_cleaner.py # Limpieza y estandarización de datos brutos  
 │ │ ├── dim_builder.py # Construcción de dimensiones a partir de datos transaccionales  
 │ │ └── fact_builder.py # Generación de la tabla de hechos con claves sustitutas y métricas  
-│ │
+│ │  
 │ ├── load/  
 │ │ ├── cleanup.py # Eliminación previa de datos en tablas destino (truncado/reset)  
 │ │ ├── dim_loaders.py # Inserción de dimensiones al Data Warehouse  
 │ │ ├── load_to_db.py  # Carga de datos hacia el entorno operacional (SQL Server)
 │ │ ├── load_to_dw.py # Carga final al DW con surrogate keys y dimensiones  
 │ │ └── load_to_staging.py  # Carga en zona de staging para transformaciones intermedias  
-│ │
+│ │  
 │ └── utils/  
 │ └── logger.py # Configuración de logger personalizado  
-│
+│  
 ├── tests/ # Pruebas unitarias por etapa  
 │ ├── test_extract.py  
 │ └── test_transform.py  
-│
+│  
 ├── run_etl.py # Script de entrada para ejecución manual  
 ├── requirements.txt # Dependencias del proyecto  
 └── README.md  
