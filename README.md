@@ -21,7 +21,7 @@ etl_project/
 │ ├── load/  
 │ │ ├── cleanup.py # Eliminación previa de datos en tablas destino (truncado/reset)  
 │ │ ├── dim_loaders.py # Inserción de dimensiones al Data Warehouse  
-│ │ ├── load_to_db.py  # Carga de datos hacia el entorno operacional (SQL Server)
+│ │ ├── load_to_db.py  # Carga de datos hacia el entorno operacional (SQL Server)  
 │ │ ├── load_to_dw.py # Carga final al DW con surrogate keys y dimensiones  
 │ │ └── load_to_staging.py  # Carga en zona de staging para transformaciones intermedias  
 │ │  
