@@ -42,7 +42,7 @@ etl_project/
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu_usuario/etl_project.git
+git clone https://github.com/Stivaly/banco-bi.git
 cd etl_project
 ```
 
@@ -79,16 +79,6 @@ python run_etl.py
 
 - Diseño extensible y reutilizable.
 
-## 🧪 Recomendaciones para testeo
+## 🏁 Licencia
 
-```bash
-pytest tests/
-```
-
-## 🏁 Requisitos
-
-- Python 3.10+
-
-- pip
-
-- Microsoft SQL Server
+- Apache License Version 2.0, January 2004
